@@ -1,0 +1,97 @@
+\documentclass{scrartcl}
+
+\input{settings}
+\input{title}
+
+
+\title{Test}
+\author{Christoph Stach}
+\matrikelNo{0555912}
+\university{Hochschule für Technik und Wirtschaft Berlin}
+\department{Fachbereich 4 - Angewandte Informatik}
+\email{s0555912@htw-berlin.de}
+\class{Parallel System}
+
+\supervisor{Sebastian Bauer}
+
+
+\begin{document}
+
+
+\maketitle
+
+\newpage
+
+\begin{abstract}
+    \thispagestyle{empty}
+    \begin{changemargin}{2.0cm}{2.0cm}
+        
+        \vspace*{\fill}
+        \begin{center}
+            \Large
+            \textbf{Abstract}
+            \vspace{0.5cm}
+        \end{center}
+
+        \large
+
+		
+		\blindtext
+
+        \vspace*{\fill}
+    \end{changemargin}
+\end{abstract}
+
+\newpage
+
+\pagenumbering{roman}
+
+
+% \addcontentsline{toc}{section}{Contents}
+\thispagestyle{empty}
+\tableofcontents
+
+
+\newpage
+\thispagestyle{empty}
+\addcontentsline{toc}{section}{\listfigurename}
+
+\listoffigures
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables
+
+\addcontentsline{toc}{section}{\lstlistlistingname}
+\lstlistoflistings
+
+
+\newpage
+
+
+\pagenumbering{arabic}
+
+\input{sections/01_introduction} \newpage
+% \input{sections/02_fundamentals} \newpage
+% \input{sections/03_methodology} \newpage
+% \input{sections/04_results} \newpage
+
+\pagenumbering{Roman}
+
+
+
+\newpage
+\addcontentsline{toc}{section}{Bibliography}
+\addcontentsline{toc}{subsection}{Literature references}
+\printbibliography[
+    notkeyword={online},
+    title={Literature references}
+]
+
+\addcontentsline{toc}{subsection}{Online references}
+\printbibliography[
+    keyword={online},
+    title={Online references}
+]
+
+
+
+\end{document}

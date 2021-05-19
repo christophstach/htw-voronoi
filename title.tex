@@ -1,0 +1,100 @@
+\definecolor{htwgruen}{RGB}{118, 185, 0}
+\definecolor{htwblau}{RGB}{0, 130, 209}
+\definecolor{htworange}{RGB}{255, 95, 0}
+\definecolor{htwgrau}{RGB}{175, 175, 175}
+
+\newcommand*{\gradeType}[1]{\gdef\thegradetype{#1}}
+\newcommand*{\supervisor}[1]{\gdef\thesupervisor{#1}}
+\newcommand*{\matrikelNo}[1]{\gdef\thematrikelno{#1}}
+\newcommand*{\submitDate}[1]{\gdef\thesubmitdate{#1}}
+\newcommand*{\university}[1]{\gdef\theuniversity{#1}}
+\newcommand*{\department}[1]{\gdef\thedepartment{#1}}
+\newcommand*{\email}[1]{\gdef\theemail{#1}}
+\newcommand*{\class}[1]{\gdef\theclass{#1}}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
+
+\renewcommand*{\maketitle}{
+    \begin{titlepage}
+        % Logo
+        
+        \begin{changemargin}{-0.8cm}{0.0cm}
+            \includegraphics[width=0.50\textwidth]{resources/images/Q01_HTW_Berlin_Logo_quer_pos_FARBIG_CMYK.eps}
+        \end{changemargin}
+        
+    
+        % Abstand nach logo
+        \vspace{2.0cm}
+    
+        % Textkörper
+        \begin{changemargin}{0.0cm}{0.0cm}
+            % Dokumenttyp
+            \color{htwgrau}
+            \normalsize
+            \textsf{\noindent\MakeUppercase{Title}} \vspace{-20pt}\\
+            % Horizontale Linie
+            \noindent\rule{\textwidth}{0.5pt}\vspace{-4pt}
+            % Title
+            \color{black}
+            \huge
+            \textsf{\thetitle}
+            \vspace{12pt}
+    
+            % Author
+            \color{htwgrau}
+            \normalsize
+            \textsf{AUTHOR}\\
+            \color{black}
+            \large
+            \textsf{\theauthor}
+            
+            % E-Mail
+            \color{htwgrau}
+            \normalsize
+            \textsf{E-MAIL}\\
+            \color{black}
+            \large
+            \textsf{\theemail{}}
+    
+    
+            % Am Ende der Seite
+            \vfill
+
+            % University
+            \color{htwgrau}
+            \normalsize
+            \textsf{CLASS}\\
+            \color{black}
+            \large
+            \textsf{\theclass}
+    
+            % University
+            \color{htwgrau}
+            \normalsize
+            \textsf{UNIVERSITY}\\
+            \color{black}
+            \large
+            \textsf{\theuniversity}
+            
+            % University
+            \color{htwgrau}
+            \normalsize
+            \textsf{DEPARTMENT}\\
+            \color{black}
+            \large
+            \textsf{\thedepartment}
+    
+            % Supervisor
+            \color{htwgrau}
+            \normalsize
+            \textsf{SUPERVISOR}\\
+            \color{black}
+            \large
+            \textsf{\thesupervisor}
+        \end{changemargin}
+        
+
+
+    \end{titlepage}
+}
