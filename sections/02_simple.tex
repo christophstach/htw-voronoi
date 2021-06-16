@@ -1,0 +1,46 @@
+\section{Simple}
+
+We decided to implement the most naive algorithm to draw a Voronoi diagram.
+To do so, we perform the following steps.
+First, we read the Centroids from a CSV-file and save them to memory for fast access. The centroids are saved with x-y-coordinates and the RGB color values used in the diagram.\\
+
+We use the software library OpenCV \footnote{\url{https://opencv.org/}}. OpenCV is a computer vision library to manipulate images and videos. Our only purpose is to use it for quick saving and displaying the Voronoi diagram.\\
+
+After creating an OpenCV image matrix of a chosen size, we loop through the rows (first loop) and the columns (second loop) to reach every pixel of the image. For each pixel we loop over the centroids (third loop), loaded before from the CSV-file, and save the color values for the closest centroid. Like this, we draw the complete Voronoi diagram.\\
+
+Once the diagram is completely calculated, we display it and save it as an image file to the hard disk. Finally, we insert an additional feature. By performing a mouse click on the image, we add a centroid, which uses the coordinates of the mouse cursor, to the diagram and recalculate it.
+
+
+\subsection{Commandline configuration}
+
+The application provides a set of command line arguments to configure different aspects of the algorithm.
+
+\begin{itemize}
+    \item -f,--file \textit{The path to the input file}
+    \item -w,--width \textit{Width of the generated image}
+    \item -h,--height \textit{Height of the generated image}
+    \item -m,--distance-measure \textit{Choose between (1) euclidean or (2) manhattan distance}
+\end{itemize}
+
+\subsection{Input data}
+
+The centroids need to be stored in a CSV file with the following format:
+
+\begin{listing}[H]
+\inputminted{raw}{resources/codes/data.csv}
+\captionof{lstlisting}{Format of the input CSV file}
+\end{listing}
+
+
+\newpage
+
+\subsection{Implementation}
+
+\begin{listing}[H]
+\inputminted{cpp}{resources/codes/simple.cpp}
+\captionof{lstlisting}{The core algorithm to create a simple voronoi diagram}
+\end{listing}
+
+\newpage
+
+\subsection{Benchmarks}

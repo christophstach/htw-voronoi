@@ -1,0 +1,14 @@
+\section{OpenMP}
+The first framework we chose in order to parallelize the aforementioned algorithm was OpenMP. The motivations for doing so were firstly, the ease of use as the framework does not require any extra setup besides installing and including it in the project, which depending on the distribution and/or editor, is often included and done automatically. The second reason, which is a direct derivative of the first reason, is how fast and yet effective the parallelization of for-loops is, which is important as our algorithm contains three and represent the main performance demanding areas.\\
+
+In the following chapter, the current parallelization with OpenMP will be presented, while also going thru all the taken but then undone steps and the reasoning behind those decisions. At the end, the benchmarks of the algorithm using OpenMPI will be displayed.
+
+\subsection{Implementation and Parallelisation}
+
+As mentioned before, our implementation of the voronoi algorithm is structured in three different for-loops: The first and the second one, iterate the rows and the columns, respectively, of the OpenCV matrix, in order to access each pixel. The third loop, which is executed for each pixel in the image, goes thru all the loaded centroids and finds the closest one.\\
+
+Given, that the steps taken to determine each pixel’s closest centroid, are encapsulated and do not share variables, memory or any information of any kind with each other. This means, that the parallel execution of these enclosed sets of commands do not, in any way, disrupt the flow of the algorithm. Therefore, the question was not which were the best areas to parallelize, given that clearly these were the for loops, but rather which combination and which commands would be the most effective.\\
+
+We tested 8 different combinations of OpenMP commands and their placements: First we tested the optimization of the outermost and innermost for loops separately and then both at once. Furthermore, for these three cases in we varied the used commands and tested first the \textit{\#pragma omp parallel} command (which is a shorter version of \textit{\#pragma omp parallel for} \cite{}) and then the \textit{\#pragma omp simd command}, which uses SIMD commands to parallelize the loop \cite{}. Finally we parallelized both for-loops at the same time, but using different commands for each loop. All these variants will be discussed in further detail hereafter.
+
+\subsection{Benchmarks}

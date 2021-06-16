@@ -1,18 +1,17 @@
-\documentclass{scrartcl}
+\documentclass[12pt]{scrartcl}
 
 \input{settings}
 \input{title}
 
 
-\title{Test}
-\author{Christoph Stach}
-\matrikelNo{0555912}
+\title{Documentation: Voronoi Diagram}
+\author{Christoph Stach\\Phillip Andreas Friedel Jaramillo}
 \university{Hochschule für Technik und Wirtschaft Berlin}
 \department{Fachbereich 4 - Angewandte Informatik}
-\email{s0555912@htw-berlin.de}
-\class{Parallel System}
+\email{s0555912@htw-berlin.de\\s0557917@htw-berlin.de}
+\class{Parallel Systems}
 
-\supervisor{Sebastian Bauer}
+\supervisor{Prof. Dr. Sebastian Bauer}
 
 
 \begin{document}
@@ -70,9 +69,10 @@
 \pagenumbering{arabic}
 
 \input{sections/01_introduction} \newpage
-% \input{sections/02_fundamentals} \newpage
-% \input{sections/03_methodology} \newpage
-% \input{sections/04_results} \newpage
+\input{sections/02_simple} \newpage
+\input{sections/03_openmp} \newpage
+\input{sections/04_openmpi} \newpage
+\input{sections/05_conclusion} \newpage
 
 \pagenumbering{Roman}
 
